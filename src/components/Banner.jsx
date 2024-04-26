@@ -23,7 +23,7 @@ export default function Banner() {
               backgroundImage: `url(${slideOne})`,
             }}
           >
-            <div className="text-center bg-gray-700 h-full w-full bg-opacity-50 flex justify-center items-center">
+            <div className="text-center bg-gray-700 h-full w-full bg-opacity-30 flex justify-center items-center">
               <div className="space-y-4">
                 <h1 className="text-2xl text-white">Discover The</h1>
                 <h1 className="text-6xl font-bold text-white">
@@ -44,7 +44,7 @@ export default function Banner() {
               backgroundImage: `url(${slideTwo})`,
             }}
           >
-            <div className="text-center bg-gray-700 h-full w-full bg-opacity-50 flex justify-center items-center">
+            <div className="text-center bg-gray-700 h-full w-full bg-opacity-30 flex justify-center items-center">
               <div className="space-y-4">
                 <h1 className="text-2xl text-white">Let&rsquo;s The</h1>
                 <h1 className="text-6xl font-bold text-white">
@@ -66,7 +66,7 @@ export default function Banner() {
               backgroundImage: `url(${slideThree})`,
             }}
           >
-            <div className="text-center bg-gray-700 h-full w-full bg-opacity-50 flex justify-center items-center">
+            <div className="text-center bg-gray-700 h-full w-full bg-opacity-30 flex justify-center items-center">
               <div className="space-y-4">
                 <h1 className="text-2xl text-white">Discover The</h1>
                 <h1 className="text-6xl font-bold text-white">
