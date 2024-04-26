@@ -1,22 +1,36 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialAuth from "./SocialAuth";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { HiOutlineEye } from "react-icons/hi2";
 import { RiEyeOffLine } from "react-icons/ri";
+import useAuth from "@/hooks/useAuth";
 export default function LoginForm() {
-  const [showPassword, setShowPassword] = useState(false);
+  const { login, firebaseLoginError, authUser } = useAuth();
   const [email, setEmail] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
-  const handleLoginForm = (e) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const handleLogin = async (e) => {
     e.preventDefault();
-    console.log(email, password);
+    await login(email, password);
   };
+  useEffect(() => {
+    if (authUser) {
+      navigate(location?.state ? location?.state : "/");
+    }
+  }, [authUser, navigate, location]);
   return (
     <div className=" bg-white p-5 w-full">
-      <form onSubmit={handleLoginForm}>
+      <form onSubmit={handleLogin}>
         <h2 className="text-gray-900 text-center text-lg mb-1 font-medium title-font">
           Login your account
         </h2>
+        {firebaseLoginError && (
+          <div>
+            <p className=" text-red-500 py-3">{firebaseLoginError}</p>
+          </div>
+        )}
         <div className="relative mb-4">
           <label htmlFor="email" className="leading-7 text-sm text-gray-600">
             Email
@@ -60,7 +74,7 @@ export default function LoginForm() {
         >
           login
         </button>
-        <p className="text-xs text-gray-500 mt-3 text-center">
+        <p className="text-base text-gray-500 mt-3 text-center">
           Don&rsquo;t have an account ?{" "}
           <Link className=" text-baseColor font-medium" to="/register">
             register

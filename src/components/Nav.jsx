@@ -5,9 +5,16 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import useAuth from "@/hooks/useAuth";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
+import { Button } from "./ui/button";
 
 export default function Nav() {
+  const { authUser, logout } = useAuth();
+  const handleLogoutUser = () => {
+    logout();
+  };
   return (
     <nav className="py-6 border-b">
       <div className="max-w-6xl mx-auto px-3">
@@ -106,9 +113,9 @@ export default function Nav() {
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
-            <div>
+            <Link to="/">
               <h1 className="text-xl font-bold text-baseColor">Trip Trove</h1>
-            </div>
+            </Link>
           </div>
           <div className="lg:flex hidden space-x-10 items-center">
             <NavLink
@@ -162,28 +169,54 @@ export default function Nav() {
               Contact
             </NavLink>
           </div>
-          <div className="flex items-center space-x-8">
-            <NavLink
-              to="/login"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-baseColor border-b border-baseColor font-semibold"
-                  : ""
-              }
-            >
-              Login
-            </NavLink>
-            <NavLink
-              to="/register"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-baseColor border-b border-baseColor font-semibold"
-                  : ""
-              }
-            >
-              Register
-            </NavLink>
-          </div>
+          {authUser ? (
+            <div>
+              <HoverCard>
+                <HoverCardTrigger>
+                  <img
+                    src={authUser?.photoURL}
+                    className="w-12 h-12 rounded-full object-cover border border-baseColor cursor-pointer"
+                    alt=""
+                  />
+                </HoverCardTrigger>
+                <HoverCardContent>
+                  <Button variant="outline" className="w-full">
+                    {authUser?.displayName}
+                  </Button>
+                  <Button
+                    onClick={() => handleLogoutUser()}
+                    variant="outline"
+                    className="w-full mt-2"
+                  >
+                    Logout
+                  </Button>
+                </HoverCardContent>
+              </HoverCard>
+            </div>
+          ) : (
+            <div className="flex items-center space-x-8">
+              <NavLink
+                to="/login"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-baseColor border-b border-baseColor font-semibold"
+                    : ""
+                }
+              >
+                Login
+              </NavLink>
+              <NavLink
+                to="/register"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-baseColor border-b border-baseColor font-semibold"
+                    : ""
+                }
+              >
+                Register
+              </NavLink>
+            </div>
+          )}
         </div>
       </div>
     </nav>
