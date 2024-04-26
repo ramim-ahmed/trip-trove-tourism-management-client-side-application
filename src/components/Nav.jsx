@@ -107,7 +107,7 @@ export default function Nav() {
               </DropdownMenu>
             </div>
             <div>
-              <h1>Trip Trove</h1>
+              <h1 className="text-xl font-bold text-baseColor">Trip Trove</h1>
             </div>
           </div>
           <div className="lg:flex hidden space-x-10 items-center">
