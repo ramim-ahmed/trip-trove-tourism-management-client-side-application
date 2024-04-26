@@ -1,3 +1,4 @@
+import PrivateRoute from "@/PrivateRoute/PrivateRoute";
 import RootLayout from "@/layouts/RootLayout";
 import AddTouristSpot from "@/pages/AddTouristSpot";
 import AllTouristsSpot from "@/pages/AllTouristsSpot";
@@ -28,7 +29,11 @@ const routes = createBrowserRouter([
       },
       {
         path: "/add-tourist-spot",
-        element: <AddTouristSpot />,
+        element: (
+          <PrivateRoute>
+            <AddTouristSpot />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/contact",
