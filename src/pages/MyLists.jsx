@@ -72,12 +72,14 @@ export default function MyLists() {
         <div className="">
           <div>
             <div className="flex justify-between items-center">
-              <h1 className="text-xl font-semibold">My Toursim Lists</h1>
+              <h1 className="text-xl font-semibold">
+                My Toursim Lists: {myLists?.data?.data?.length || 0}
+              </h1>
               <Link to="/add-tourist-spot">
                 <Button variant="outline">Add New Tourism Spot</Button>
               </Link>
             </div>
-            <div className="bg-white p-5 mt-5">
+            <div className="bg-white border border-opacity-15 p-5 mt-5">
               <Table>
                 <TableHeader>
                   <TableRow>
@@ -116,17 +118,20 @@ export default function MyLists() {
                     </TableRow>
                   ) : (
                     myLists?.data?.data?.map(
-                      ({
-                        _id,
-                        name,
-                        location,
-                        country,
-                        travel_time,
-                        average_cost,
-                        seasonality,
-                      }) => (
+                      (
+                        {
+                          _id,
+                          name,
+                          location,
+                          country,
+                          travel_time,
+                          average_cost,
+                          seasonality,
+                        },
+                        idx
+                      ) => (
                         <TableRow key={_id}>
-                          <TableCell>01</TableCell>
+                          <TableCell>{idx + 1}</TableCell>
                           <TableCell className="hidden lg:block">
                             {name}
                           </TableCell>
@@ -138,7 +143,7 @@ export default function MyLists() {
                           <TableCell>{travel_time}</TableCell>
                           <TableCell>
                             <DropdownMenu>
-                              <DropdownMenuTrigger>
+                              <DropdownMenuTrigger className="cursor-pointer">
                                 <BsThreeDotsVertical className="w-6 h-6 text-gray-600" />
                               </DropdownMenuTrigger>
                               <DropdownMenuContent>

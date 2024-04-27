@@ -40,7 +40,9 @@ export default function TouristSpot({ item }) {
             <p>Visit: {item?.total_visitor_per_year}/yr</p>
           </div>
           <div>
-            <h1 className="text-base text-baseColor font-semibold">$1200</h1>
+            <h1 className="text-base text-baseColor font-semibold">
+              ${item?.average_cost}
+            </h1>
           </div>
         </div>
         <Button className=" bg-baseColor w-full rounded-none">

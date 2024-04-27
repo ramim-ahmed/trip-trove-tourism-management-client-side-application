@@ -1,6 +1,6 @@
 import axios from "@/axios/axios";
 import TouristSpot from "@/components/TouristSpot";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { BsFilterRight } from "react-icons/bs";
 import {
   DropdownMenu,
@@ -8,28 +8,16 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import toast from "react-hot-toast";
 import Loader from "@/components/Loader";
+import { useQuery } from "@tanstack/react-query";
 
 export default function AllTouristsSpot() {
-  const [allTouristsSpot, setAllTouristsSpot] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [sorted, setSorted] = useState("desc");
-  useEffect(() => {
-    const fetchAllTouristsSpot = async () => {
-      setLoading(true);
-      try {
-        const res = await axios.get(`/tourists/?average_cost=${sorted}`);
-        const data = await res.data?.data;
-        setAllTouristsSpot(data);
-        setLoading(false);
-      } catch (error) {
-        toast.error(error.message);
-        setLoading(false);
-      }
-    };
-    fetchAllTouristsSpot();
-  }, [sorted]);
+  const { data, isLoading } = useQuery({
+    queryKey: ["tourists", sorted],
+    queryFn: async () => axios.get(`/tourists/?average_cost=${sorted}`),
+  });
+  const allTouristsSpot = data?.data?.data;
   return (
     <div className="py-10 max-w-6xl mx-auto px-3">
       <div className="">
@@ -63,7 +51,7 @@ export default function AllTouristsSpot() {
           </DropdownMenu>
         </div>
       </div>
-      {loading && (
+      {isLoading && (
         <div className="flex justify-center">
           <Loader />
         </div>
