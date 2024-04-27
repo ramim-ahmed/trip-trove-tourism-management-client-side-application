@@ -19,6 +19,11 @@ export default function TouristsSpot() {
           <div className="border-4 w-44 border-b border-baseColor"></div>
         </div>
       </div>
+      {tourists?.data?.data.length <= 0 && (
+        <div className="text-center mt-8">
+          <h1 className="text-xl">No Data Found!!</h1>
+        </div>
+      )}
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 mt-10">
         {isLoading ? (
           <div className="col-span-3 flex justify-center">

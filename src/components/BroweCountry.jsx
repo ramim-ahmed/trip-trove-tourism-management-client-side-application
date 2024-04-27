@@ -18,6 +18,11 @@ export default function BroweCountry() {
           <div className="border-4 w-44 border-b border-baseColor"></div>
         </div>
       </div>
+      {countries?.data?.data?.data?.data.length <= 0 && (
+        <div className="text-center mt-8">
+          <h1 className="text-xl">No Data Found!!</h1>
+        </div>
+      )}
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 mt-8">
         {isLoading ? (
           <div className="col-span-3 flex justify-center">

@@ -9,6 +9,7 @@ import { Link, NavLink } from "react-router-dom";
 import useAuth from "@/hooks/useAuth";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
 import { Button } from "./ui/button";
+import ThemeMode from "./ThemeMode";
 
 export default function Nav() {
   const { authUser, logout } = useAuth();
@@ -17,8 +18,8 @@ export default function Nav() {
   };
   return (
     <nav className="py-6 border-b">
-      <div className="max-w-6xl mx-auto px-3">
-        <div className="flex justify-between items-center">
+      <div className="max-w-6xl mx-auto px-3 flex items-center">
+        <div className="flex justify-between items-center flex-1 mr-4">
           <div className="flex items-center space-x-3 lg:space-x-0">
             <div className="lg:hidden">
               <DropdownMenu>
@@ -86,30 +87,34 @@ export default function Nav() {
                       Contact
                     </DropdownMenuItem>
                   </NavLink>
-                  <NavLink
-                    to="/login"
-                    className={({ isActive }) =>
-                      isActive
-                        ? "text-baseColor border-b border-baseColor font-semibold"
-                        : ""
-                    }
-                  >
-                    <DropdownMenuItem className="text-base">
-                      Login
-                    </DropdownMenuItem>
-                  </NavLink>
-                  <NavLink
-                    to="/register"
-                    className={({ isActive }) =>
-                      isActive
-                        ? "text-baseColor border-b border-baseColor font-semibold"
-                        : ""
-                    }
-                  >
-                    <DropdownMenuItem className="text-base">
-                      Register
-                    </DropdownMenuItem>
-                  </NavLink>
+                  {!authUser && (
+                    <>
+                      <NavLink
+                        to="/login"
+                        className={({ isActive }) =>
+                          isActive
+                            ? "text-baseColor border-b border-baseColor font-semibold"
+                            : ""
+                        }
+                      >
+                        <DropdownMenuItem className="text-base">
+                          Login
+                        </DropdownMenuItem>
+                      </NavLink>
+                      <NavLink
+                        to="/register"
+                        className={({ isActive }) =>
+                          isActive
+                            ? "text-baseColor border-b border-baseColor font-semibold"
+                            : ""
+                        }
+                      >
+                        <DropdownMenuItem className="text-base">
+                          Register
+                        </DropdownMenuItem>
+                      </NavLink>
+                    </>
+                  )}
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
@@ -217,6 +222,9 @@ export default function Nav() {
               </NavLink>
             </div>
           )}
+        </div>
+        <div className="">
+          <ThemeMode />
         </div>
       </div>
     </nav>

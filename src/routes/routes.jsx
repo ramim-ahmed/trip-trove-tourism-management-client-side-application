@@ -1,5 +1,6 @@
 import PrivateRoute from "@/PrivateRoute/PrivateRoute";
 import axios from "@/axios/axios";
+import CountryWiseTouristSpot from "@/components/CountryWiseTouristSpot";
 import RootLayout from "@/layouts/RootLayout";
 import AddTouristSpot from "@/pages/AddTouristSpot";
 import AllTouristsSpot from "@/pages/AllTouristsSpot";
@@ -27,9 +28,14 @@ const routes = createBrowserRouter([
         path: "/all-tourists-spot",
         element: <AllTouristsSpot />,
       },
+      { path: "/countries/:country/:id", element: <CountryWiseTouristSpot /> },
       {
         path: "/tourist-spot/details/:id",
-        element: <TouristsSpotDetails />,
+        element: (
+          <PrivateRoute>
+            <TouristsSpotDetails />
+          </PrivateRoute>
+        ),
         loader: async ({ params }) =>
           await axios.get(`/tourists/${params?.id}`),
       },
