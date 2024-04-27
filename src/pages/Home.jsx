@@ -9,7 +9,7 @@ export default function Home() {
       <Banner />
       <About />
       <BroweCountry />
-      <TouristsSpot />
+      <TouristsSpot isHome={true} />
     </div>
   );
 }

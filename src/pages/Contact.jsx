@@ -1,8 +1,8 @@
 export default function Contact() {
   return (
     <section className="body-font relative py-10 px-3">
-      <div className="max-w-6xl mx-auto py-10 bg-baseColor text-white text-xl font-medium">
-        <h1 className="text-center">Contact Us Now</h1>
+      <div className="max-w-6xl mx-auto py-10 bg-baseColor text-white text-xl ">
+        <h1 className="text-center font-medium">Contact Us Now</h1>
       </div>
       <div className=" max-w-6xl mx-auto mt-10 flex sm:flex-nowrap flex-wrap">
         <div className="lg:w-2/3 md:w-1/2 bg-gray-300 overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
