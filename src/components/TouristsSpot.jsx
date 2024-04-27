@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import TouristSpot from "./TouristSpot";
 import axios from "@/axios/axios";
+import Loader from "./Loader";
 
 export default function TouristsSpot() {
   const { data: tourists, isLoading } = useQuery({
@@ -19,7 +20,9 @@ export default function TouristsSpot() {
       </div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 mt-10">
         {isLoading ? (
-          <h1>Loading...</h1>
+          <div className="col-span-3 flex justify-center">
+            <Loader />
+          </div>
         ) : (
           tourists?.data?.data.map((item) => (
             <TouristSpot key={item._id} item={item} />

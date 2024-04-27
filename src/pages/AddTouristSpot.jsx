@@ -85,8 +85,8 @@ export default function AddTouristSpot() {
         Create New Tourist Spot
       </h1>
       <form onSubmit={handleSubmit(handleNewTouristSpot)} className="mt-5">
-        <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-8">
-          <div className="relative mb-4">
+        <div className="grid grid-cols-12 gap-x-8">
+          <div className="mb-4 lg:col-span-6 col-span-12">
             <label htmlFor="name" className="leading-7 text-sm text-gray-600">
               Name
             </label>
@@ -102,7 +102,7 @@ export default function AddTouristSpot() {
               <span className="text-red-500">This field is required</span>
             )}
           </div>
-          <div className="relative mb-4">
+          <div className=" mb-4 lg:col-span-6 col-span-12">
             <label
               htmlFor="country"
               className="leading-7 text-sm text-gray-600"
@@ -116,7 +116,7 @@ export default function AddTouristSpot() {
               <SelectContent>{countryItem}</SelectContent>
             </Select>
           </div>
-          <div className="relative mb-4">
+          <div className=" mb-4 lg:col-span-6 col-span-12">
             <label
               htmlFor="location"
               className="leading-7 text-sm text-gray-600"
@@ -135,7 +135,7 @@ export default function AddTouristSpot() {
               <span className="text-red-500">This field is required</span>
             )}
           </div>
-          <div className="relative mb-4">
+          <div className=" mb-4 lg:col-span-6 col-span-12">
             <label
               htmlFor="average_cost"
               className="leading-7 text-sm text-gray-600"
@@ -154,7 +154,7 @@ export default function AddTouristSpot() {
               <span className="text-red-500">This field is required</span>
             )}
           </div>
-          <div className="relative mb-4">
+          <div className=" mb-4 lg:col-span-6 col-span-12">
             <label
               htmlFor="seasonality"
               className="leading-7 text-sm text-gray-600"
@@ -171,7 +171,7 @@ export default function AddTouristSpot() {
               </SelectContent>
             </Select>
           </div>
-          <div className="relative mb-4">
+          <div className=" mb-4 lg:col-span-6 col-span-12">
             <label
               htmlFor="travel_time"
               className="leading-7 text-sm text-gray-600"
@@ -190,7 +190,7 @@ export default function AddTouristSpot() {
               <span className="text-red-500">This field is required</span>
             )}
           </div>
-          <div className="relative mb-4">
+          <div className=" mb-4 lg:col-span-6 col-span-12">
             <label
               htmlFor="total_visitor_per_year"
               className="leading-7 text-sm text-gray-600"
@@ -209,7 +209,7 @@ export default function AddTouristSpot() {
               <span className="text-red-500">This field is required</span>
             )}
           </div>
-          <div className="relative mb-4">
+          <div className="relative mb-4 lg:col-span-6 col-span-12">
             <label htmlFor="photo" className="leading-7 text-sm text-gray-600">
               Phot URL
             </label>
@@ -225,7 +225,7 @@ export default function AddTouristSpot() {
               <span className="text-red-500">This field is required</span>
             )}
           </div>
-          <div className="relative mb-4 col-span-2">
+          <div className=" mb-4 col-span-12">
             <label
               htmlFor="description"
               className="leading-7 text-sm text-gray-600"

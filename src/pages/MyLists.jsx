@@ -82,7 +82,7 @@ export default function MyLists() {
                 <TableHeader>
                   <TableRow>
                     <TableHead>#</TableHead>
-                    <TableHead>Name</TableHead>
+                    <TableHead className="hidden lg:block">Name</TableHead>
                     <TableHead>Location</TableHead>
                     <TableHead>Average Cost</TableHead>
                     <TableHead>Seasonality</TableHead>
@@ -127,7 +127,9 @@ export default function MyLists() {
                       }) => (
                         <TableRow key={_id}>
                           <TableCell>01</TableCell>
-                          <TableCell>{name}</TableCell>
+                          <TableCell className="hidden lg:block">
+                            {name}
+                          </TableCell>
                           <TableCell>
                             {location}, {country?.name}
                           </TableCell>

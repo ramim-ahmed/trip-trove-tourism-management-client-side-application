@@ -1,4 +1,5 @@
 import PrivateRoute from "@/PrivateRoute/PrivateRoute";
+import axios from "@/axios/axios";
 import RootLayout from "@/layouts/RootLayout";
 import AddTouristSpot from "@/pages/AddTouristSpot";
 import AllTouristsSpot from "@/pages/AllTouristsSpot";
@@ -10,6 +11,7 @@ import NotFound from "@/pages/NotFound";
 import Register from "@/pages/Register";
 import UpdateTourist from "@/pages/UpdateTourist";
 import { createBrowserRouter } from "react-router-dom";
+
 const routes = createBrowserRouter([
   {
     path: "/",
@@ -42,7 +44,13 @@ const routes = createBrowserRouter([
       },
       {
         path: "/tourists/udpate/:id",
-        element: <UpdateTourist />,
+        element: (
+          <PrivateRoute>
+            <UpdateTourist />
+          </PrivateRoute>
+        ),
+        loader: async ({ params }) =>
+          await axios.get(`/tourists/${params?.id}`),
       },
       {
         path: "/contact",
