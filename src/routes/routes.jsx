@@ -8,6 +8,7 @@ import Login from "@/pages/Login";
 import MyLists from "@/pages/MyLists";
 import NotFound from "@/pages/NotFound";
 import Register from "@/pages/Register";
+import UpdateTourist from "@/pages/UpdateTourist";
 import { createBrowserRouter } from "react-router-dom";
 const routes = createBrowserRouter([
   {
@@ -25,7 +26,11 @@ const routes = createBrowserRouter([
       },
       {
         path: "/my-lists",
-        element: <MyLists />,
+        element: (
+          <PrivateRoute>
+            <MyLists />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/add-tourist-spot",
@@ -34,6 +39,10 @@ const routes = createBrowserRouter([
             <AddTouristSpot />
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/tourists/udpate/:id",
+        element: <UpdateTourist />,
       },
       {
         path: "/contact",
