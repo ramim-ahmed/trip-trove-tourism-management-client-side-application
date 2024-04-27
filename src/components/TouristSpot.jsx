@@ -3,6 +3,7 @@ import { Button } from "./ui/button";
 import { PiMapPinLineLight } from "react-icons/pi";
 import { MdAccessTime } from "react-icons/md";
 import { MdOutlineDisabledVisible } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 export default function TouristSpot({ item }) {
   const { name } = item;
@@ -45,9 +46,13 @@ export default function TouristSpot({ item }) {
             </h1>
           </div>
         </div>
-        <Button className=" bg-baseColor w-full rounded-none">
-          View Details
-        </Button>
+        <div>
+          <Link to={`/tourist-spot/details/${item?._id}`}>
+            <Button className=" bg-baseColor w-full rounded-none">
+              View Details
+            </Button>
+          </Link>
+        </div>
       </div>
     </div>
   );

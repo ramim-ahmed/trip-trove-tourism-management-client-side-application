@@ -9,6 +9,7 @@ import Login from "@/pages/Login";
 import MyLists from "@/pages/MyLists";
 import NotFound from "@/pages/NotFound";
 import Register from "@/pages/Register";
+import TouristsSpotDetails from "@/pages/TouristsSpotDetails";
 import UpdateTourist from "@/pages/UpdateTourist";
 import { createBrowserRouter } from "react-router-dom";
 
@@ -27,18 +28,24 @@ const routes = createBrowserRouter([
         element: <AllTouristsSpot />,
       },
       {
-        path: "/my-lists",
-        element: (
-          <PrivateRoute>
-            <MyLists />
-          </PrivateRoute>
-        ),
+        path: "/tourist-spot/details/:id",
+        element: <TouristsSpotDetails />,
+        loader: async ({ params }) =>
+          await axios.get(`/tourists/${params?.id}`),
       },
       {
         path: "/add-tourist-spot",
         element: (
           <PrivateRoute>
             <AddTouristSpot />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/my-lists",
+        element: (
+          <PrivateRoute>
+            <MyLists />
           </PrivateRoute>
         ),
       },
