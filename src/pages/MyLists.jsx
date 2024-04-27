@@ -1,5 +1,6 @@
 import axios from "@/axios/axios";
 import { Button } from "@/components/ui/button";
+import Swal from "sweetalert2";
 import {
   Table,
   TableBody,
@@ -9,7 +10,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import useAuth from "@/hooks/useAuth";
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import {
@@ -18,14 +19,53 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import Loader from "@/components/Loader";
 export default function MyLists() {
   const { authUser } = useAuth();
-  const { data: myLists } = useQuery({
+  const queryClient = useQueryClient();
+  const { data: myLists, isLoading } = useQuery({
     queryKey: ["tourists"],
     queryFn: async () =>
       await axios.get(`/tourists/my-lists/?email=${authUser?.email}`),
   });
 
+  const { mutateAsync: deleteTourist } = useMutation({
+    mutationFn: async (id) => {
+      return await axios.delete(`/tourists/${id}`);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries(["tourists"]);
+    },
+  });
+
+  const handleDeleteTourist = async (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+          await deleteTourist(id);
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your file has been deleted.",
+            icon: "success",
+          });
+        } catch (error) {
+          Swal.fire({
+            icon: "error",
+            title: error,
+            text: "Tourist is deleted failed",
+          });
+        }
+      }
+    });
+  };
   return (
     <div className="bg-[#f1f0f08c] py-20 min-h-screen">
       <div className="max-w-6xl mx-auto ">
@@ -51,8 +91,29 @@ export default function MyLists() {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
+                  {isLoading && (
+                    <TableRow>
+                      <TableCell></TableCell>
+                      <TableCell></TableCell>
+                      <TableCell></TableCell>
+                      <TableCell></TableCell>
+                      <TableCell>
+                        <Loader />
+                      </TableCell>
+                      <TableCell></TableCell>
+                      <TableCell></TableCell>
+                    </TableRow>
+                  )}
                   {myLists?.data?.data?.length <= 0 ? (
-                    <div>Your Tourism List Is Empty!!</div>
+                    <TableRow>
+                      <TableCell></TableCell>
+                      <TableCell></TableCell>
+                      <TableCell></TableCell>
+                      <TableCell></TableCell>
+                      <TableCell>Your Tourism Is Empty!!</TableCell>
+                      <TableCell></TableCell>
+                      <TableCell></TableCell>
+                    </TableRow>
                   ) : (
                     myLists?.data?.data?.map(
                       ({
@@ -84,7 +145,10 @@ export default function MyLists() {
                                     Edit
                                   </DropdownMenuItem>
                                 </Link>
-                                <DropdownMenuItem className="text-semibold cursor-pointer">
+                                <DropdownMenuItem
+                                  onClick={() => handleDeleteTourist(_id)}
+                                  className="text-semibold cursor-pointer"
+                                >
                                   Delete
                                 </DropdownMenuItem>
                               </DropdownMenuContent>
