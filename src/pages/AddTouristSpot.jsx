@@ -69,6 +69,12 @@ export default function AddTouristSpot() {
       description,
       photo,
     };
+    if (!seasonality) {
+      return toast.error("Seasonality Not Selected!!");
+    }
+    if (!country) {
+      return toast.error("Country Not Selected!!");
+    }
     setLoading(true);
     try {
       await addNewTourist(newData);

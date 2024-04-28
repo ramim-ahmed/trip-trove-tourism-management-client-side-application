@@ -15,12 +15,12 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 import { Helmet } from "react-helmet-async";
 export default function CountryWiseTouristSpot() {
   const { id, country } = useParams();
-  console.log(id, country);
   const navigate = useNavigate();
   const [sorted, setSorted] = useState("desc");
   const { data, isLoading } = useQuery({
     queryKey: ["tourists", sorted, id],
-    queryFn: async () => axios.get(`/tourists/?country=${id}`),
+    queryFn: async () =>
+      axios.get(`/tourists/?country=${id}&average_cost=${sorted}`),
   });
   const allTouristsSpot = data?.data?.data;
   const handleGoBack = () => {

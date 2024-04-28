@@ -17,7 +17,7 @@ export default function Nav() {
     logout();
   };
   return (
-    <nav className="py-6 border-b sticky top-0 bg-white z-10">
+    <nav className="py-6 border-b sticky top-0 bg-white dark:bg-dark-color z-10">
       <div className="max-w-6xl mx-auto px-3 flex items-center">
         <div className="flex justify-between items-center flex-1 mr-4">
           <div className="flex items-center space-x-3 lg:space-x-0">
