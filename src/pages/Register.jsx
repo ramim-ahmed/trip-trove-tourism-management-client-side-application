@@ -2,10 +2,14 @@
 import Loader from "@/components/Loader";
 import RegisterForm from "@/components/RegisterForm";
 import useAuth from "@/hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 export default function Register() {
   const { loading } = useAuth();
   return (
     <>
+      <Helmet>
+        <title>Register</title>
+      </Helmet>
       <div
         style={{
           backgroundImage:

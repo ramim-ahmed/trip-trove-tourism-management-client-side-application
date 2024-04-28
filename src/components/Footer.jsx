@@ -13,17 +13,17 @@ export default function Footer() {
               culpa soluta consequuntur eos atque iusto quis earum cumque
               explicabo mollitia!
             </p>
-            <div className="mt-5 flex justify-center lg:justify-start">
+            <div className="mt-5 flex justify-center md:justify-start">
               <div>
-                <div className="flex items-center flex-col lg:flex-row space-x-2">
+                <div className="flex items-center flex-col md:flex-row space-x-2">
                   <FaSquarePhone className="w-5 h-5" />
                   <p>+88 02584 696868</p>
                 </div>
-                <div className="flex items-center space-x-2 mt-3 flex-col lg:flex-row">
+                <div className="flex items-center space-x-2 mt-3 flex-col md:flex-row">
                   <MdMarkEmailRead className="w-5 h-5" />
                   <p>triptrove@gmail.com</p>
                 </div>
-                <div className="flex items-center space-x-2 mt-3 flex-col lg:flex-row">
+                <div className="flex items-center space-x-2 mt-3 flex-col md:flex-row">
                   <MdAddLocationAlt className="w-5 h-5" />
                   <p>932 Galvin St. Pompano Beach, FL 33060</p>
                 </div>
@@ -49,7 +49,7 @@ export default function Footer() {
               </li>
             </nav>
           </div>
-          <div className="lg:w-1/5 md:w-1/2 w-full ">
+          <div className="lg:w-1/5 md:w-1/2 w-full lg:mt-0 md:mt-5 mt-0">
             <h2 className="title-font text-white tracking-widest text-sm mb-3 font-semibold">
               SUPPORTS
             </h2>
@@ -65,7 +65,7 @@ export default function Footer() {
               </li>
             </nav>
           </div>
-          <div className="lg:w-1/5 md:w-1/2 w-full ">
+          <div className="lg:w-1/5 md:w-1/2 w-full lg:mt-0 md:mt-5 mt-0">
             <h2 className="title-font text-white tracking-widest text-sm mb-3 font-semibold">
               Company
             </h2>

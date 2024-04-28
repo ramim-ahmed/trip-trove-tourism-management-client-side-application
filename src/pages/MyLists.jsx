@@ -20,6 +20,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import Loader from "@/components/Loader";
+import { Helmet } from "react-helmet-async";
 export default function MyLists() {
   const { authUser } = useAuth();
   const queryClient = useQueryClient();
@@ -67,110 +68,115 @@ export default function MyLists() {
     });
   };
   return (
-    <div className="bg-[#f1f0f08c] py-20 min-h-screen">
-      <div className="max-w-6xl mx-auto ">
-        <div className="">
-          <div>
-            <div className="flex justify-between items-center">
-              <h1 className="text-xl font-semibold">
-                My Toursim Lists: {myLists?.data?.data?.length || 0}
-              </h1>
-              <Link to="/add-tourist-spot">
-                <Button variant="outline">Add New Tourism Spot</Button>
-              </Link>
-            </div>
-            <div className="bg-white border border-opacity-15 p-5 mt-5">
-              <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead>#</TableHead>
-                    <TableHead className="hidden lg:block">Name</TableHead>
-                    <TableHead>Location</TableHead>
-                    <TableHead>Average Cost</TableHead>
-                    <TableHead>Seasonality</TableHead>
-                    <TableHead>Travel Time</TableHead>
-                    <TableHead>Action</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {isLoading && (
+    <>
+      <Helmet>
+        <title>My Lists</title>
+      </Helmet>
+      <div className="bg-[#f1f0f08c] py-20 min-h-screen">
+        <div className="max-w-6xl mx-auto px-3">
+          <div className="">
+            <div>
+              <div className="flex justify-between lg:flex-row flex-col items-center">
+                <h1 className="text-xl font-semibold">
+                  My Toursim Lists: {myLists?.data?.data?.length || 0}
+                </h1>
+                <Link to="/add-tourist-spot">
+                  <Button variant="outline">Add New Tourism Spot</Button>
+                </Link>
+              </div>
+              <div className="bg-white border border-opacity-15 p-5 mt-5">
+                <Table>
+                  <TableHeader>
                     <TableRow>
-                      <TableCell></TableCell>
-                      <TableCell></TableCell>
-                      <TableCell></TableCell>
-                      <TableCell></TableCell>
-                      <TableCell>
-                        <Loader />
-                      </TableCell>
-                      <TableCell></TableCell>
-                      <TableCell></TableCell>
+                      <TableHead>#</TableHead>
+                      <TableHead className="hidden lg:block">Name</TableHead>
+                      <TableHead>Location</TableHead>
+                      <TableHead>Average Cost</TableHead>
+                      <TableHead>Seasonality</TableHead>
+                      <TableHead>Travel Time</TableHead>
+                      <TableHead>Action</TableHead>
                     </TableRow>
-                  )}
-                  {myLists?.data?.data?.length <= 0 ? (
-                    <TableRow>
-                      <TableCell></TableCell>
-                      <TableCell></TableCell>
-                      <TableCell></TableCell>
-                      <TableCell></TableCell>
-                      <TableCell>Your Tourism Is Empty!!</TableCell>
-                      <TableCell></TableCell>
-                      <TableCell></TableCell>
-                    </TableRow>
-                  ) : (
-                    myLists?.data?.data?.map(
-                      (
-                        {
-                          _id,
-                          name,
-                          location,
-                          country,
-                          travel_time,
-                          average_cost,
-                          seasonality,
-                        },
-                        idx
-                      ) => (
-                        <TableRow key={_id}>
-                          <TableCell>{idx + 1}</TableCell>
-                          <TableCell className="hidden lg:block">
-                            {name}
-                          </TableCell>
-                          <TableCell>
-                            {location}, {country?.name}
-                          </TableCell>
-                          <TableCell>${average_cost}</TableCell>
-                          <TableCell>{seasonality}</TableCell>
-                          <TableCell>{travel_time}</TableCell>
-                          <TableCell>
-                            <DropdownMenu>
-                              <DropdownMenuTrigger className="cursor-pointer">
-                                <BsThreeDotsVertical className="w-6 h-6 text-gray-600" />
-                              </DropdownMenuTrigger>
-                              <DropdownMenuContent>
-                                <Link to={`/tourists/udpate/${_id}`}>
-                                  <DropdownMenuItem className="text-semibold cursor-pointer">
-                                    Edit
+                  </TableHeader>
+                  <TableBody>
+                    {isLoading && (
+                      <TableRow>
+                        <TableCell></TableCell>
+                        <TableCell></TableCell>
+                        <TableCell></TableCell>
+                        <TableCell></TableCell>
+                        <TableCell>
+                          <Loader />
+                        </TableCell>
+                        <TableCell></TableCell>
+                        <TableCell></TableCell>
+                      </TableRow>
+                    )}
+                    {myLists?.data?.data?.length <= 0 ? (
+                      <TableRow>
+                        <TableCell></TableCell>
+                        <TableCell></TableCell>
+                        <TableCell></TableCell>
+                        <TableCell></TableCell>
+                        <TableCell>Your Tourism Is Empty!!</TableCell>
+                        <TableCell></TableCell>
+                        <TableCell></TableCell>
+                      </TableRow>
+                    ) : (
+                      myLists?.data?.data?.map(
+                        (
+                          {
+                            _id,
+                            name,
+                            location,
+                            country,
+                            travel_time,
+                            average_cost,
+                            seasonality,
+                          },
+                          idx
+                        ) => (
+                          <TableRow key={_id}>
+                            <TableCell>{idx + 1}</TableCell>
+                            <TableCell className="hidden lg:block">
+                              {name}
+                            </TableCell>
+                            <TableCell>
+                              {location}, {country?.name}
+                            </TableCell>
+                            <TableCell>${average_cost}</TableCell>
+                            <TableCell>{seasonality}</TableCell>
+                            <TableCell>{travel_time}</TableCell>
+                            <TableCell>
+                              <DropdownMenu>
+                                <DropdownMenuTrigger className="cursor-pointer">
+                                  <BsThreeDotsVertical className="w-6 h-6 text-gray-600" />
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent>
+                                  <Link to={`/tourists/udpate/${_id}`}>
+                                    <DropdownMenuItem className="text-semibold cursor-pointer">
+                                      Edit
+                                    </DropdownMenuItem>
+                                  </Link>
+                                  <DropdownMenuItem
+                                    onClick={() => handleDeleteTourist(_id)}
+                                    className="text-semibold cursor-pointer"
+                                  >
+                                    Delete
                                   </DropdownMenuItem>
-                                </Link>
-                                <DropdownMenuItem
-                                  onClick={() => handleDeleteTourist(_id)}
-                                  className="text-semibold cursor-pointer"
-                                >
-                                  Delete
-                                </DropdownMenuItem>
-                              </DropdownMenuContent>
-                            </DropdownMenu>
-                          </TableCell>
-                        </TableRow>
+                                </DropdownMenuContent>
+                              </DropdownMenu>
+                            </TableCell>
+                          </TableRow>
+                        )
                       )
-                    )
-                  )}
-                </TableBody>
-              </Table>
+                    )}
+                  </TableBody>
+                </Table>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

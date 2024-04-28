@@ -11,20 +11,21 @@ import reviewProfilethree from "../assets/r3.jpeg";
 export default function Reviews() {
   return (
     <div className="grid grid-cols-12 bg-gray-100 dark:bg-black">
-      <div className="lg:col-span-6 col-span-12">
+      <div className="lg:col-span-5 col-span-12">
         <img
+          className="h-full object-cover"
           src="https://images.unsplash.com/photo-1712650827891-cf87e3b8aaec?q=80&w=1539&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt=""
         />
       </div>
-      <div className="lg:col-span-6 col-span-12 py-10 lg:py-0 flex items-center justify-center px-3">
+      <div className="lg:col-span-7 col-span-12 py-10 flex items-center justify-center px-3">
         <div>
           <div>
             <h1 className="text-3xl font-medium text-center">Our Reviews</h1>
           </div>
-          <Carousel className="w-[450px] mt-10">
-            <CarouselContent className="w-[450px]">
-              <CarouselItem className="w-[450px]">
+          <Carousel className="w-[300px] md:w-[450px] mt-10">
+            <CarouselContent className="w-[300px] md:w-[450px]">
+              <CarouselItem className="w-[300px] md:w-[450px]">
                 <div className="">
                   <div className="h-full text-center">
                     <img
@@ -47,7 +48,7 @@ export default function Reviews() {
                   </div>
                 </div>
               </CarouselItem>
-              <CarouselItem className="w-[450px]">
+              <CarouselItem className="w-[300px] md:w-[450px]">
                 <div className="">
                   <div className="h-full text-center">
                     <img
@@ -70,7 +71,7 @@ export default function Reviews() {
                   </div>
                 </div>
               </CarouselItem>
-              <CarouselItem className="w-[450px]">
+              <CarouselItem className="w-[300px] md:w-[450px]">
                 <div className="">
                   <div className="h-full text-center">
                     <img

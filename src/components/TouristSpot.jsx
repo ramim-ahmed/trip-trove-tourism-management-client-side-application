@@ -9,7 +9,7 @@ export default function TouristSpot({ item }) {
   const { name } = item;
   return (
     <Fade>
-      <div className="border border-baseColor border-opacity-15 p-2 rounded flex flex-col justify-between">
+      <div className="border border-baseColor border-opacity-15 p-2 rounded flex flex-col justify-between] hover:scale-105 duration-300 hover:duration-300">
         <div className="relative">
           <img
             className="w-full h-[250px] object-cover rounded "
