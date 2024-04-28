@@ -72,7 +72,7 @@ export default function MyLists() {
       <Helmet>
         <title>My Lists</title>
       </Helmet>
-      <div className="bg-[#f1f0f08c] py-20 min-h-screen">
+      <div className="bg-[#f1f0f08c] py-20 min-h-screen dark:bg-dark-color">
         <div className="max-w-6xl mx-auto px-3">
           <div className="">
             <div>
@@ -84,7 +84,7 @@ export default function MyLists() {
                   <Button variant="outline">Add New Tourism Spot</Button>
                 </Link>
               </div>
-              <div className="bg-white border border-opacity-15 p-5 mt-5">
+              <div className="bg-white dark:bg-dark-color border border-opacity-15 p-5 mt-5">
                 <Table>
                   <TableHeader>
                     <TableRow>

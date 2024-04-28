@@ -19,10 +19,10 @@ export default function About() {
             We Are Best Tourism Agency in <br /> South Asia.
           </h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
-            consequatur voluptatem illum repellat minus tempora molestias
-            doloribus aliquid, dolorum quasi magnam placeat deleniti ex et
-            aliquam quia. Ex, laudantium libero!
+            Trip Trove is a tourism management system (TMS) is a focus tourism
+            service providers run and operate their enterprises. It is an entire
+            platform that assists companies in streamlining processes,
+            increasing efficiency, and improving customer support.
           </p>
           <Button className="bg-baseColor w-56">More About</Button>
         </div>

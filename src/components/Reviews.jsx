@@ -34,17 +34,16 @@ export default function Reviews() {
                       src={reviewProfileOne}
                     />
                     <p className="leading-relaxed">
-                      Edison bulb retro cloud bread echo park, helvetica
-                      stumptown taiyaki taxidermy 90&rsquo;s cronut +1 kinfolk.
-                      Single-origin coffee ennui shaman taiyaki vape DIY tote
-                      bag drinking vinegar cronut adaptogen squid fanny pack
-                      vaporware.
+                      I have been your customer since 2019. And every time I
+                      book with you I know I am getting the best. First my Fiji
+                      trip and now the Bali trip. I will again come back to you
+                      for another annual holiday. Thanks you
                     </p>
                     <span className="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4" />
                     <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm dark:text-white">
-                      ALPER KAMU
+                      Avantee Chatterjee
                     </h2>
-                    <p className="text-gray-500">UI Develeoper</p>
+                    <p className="text-gray-500">Malaysia</p>
                   </div>
                 </div>
               </CarouselItem>
@@ -57,17 +56,14 @@ export default function Reviews() {
                       src={reviewProfileTwo}
                     />
                     <p className="leading-relaxed">
-                      Edison bulb retro cloud bread echo park, helvetica
-                      stumptown taiyaki taxidermy 90&rsquo;s cronut +1 kinfolk.
-                      Single-origin coffee ennui shaman taiyaki vape DIY tote
-                      bag drinking vinegar cronut adaptogen squid fanny pack
-                      vaporware.
+                      Great Communication from Start to Finish with everything
+                      promoted delivered.
                     </p>
                     <span className="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4" />
                     <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm dark:text-white">
-                      ALPER KAMU
+                      Timothy Anderson
                     </h2>
-                    <p className="text-gray-500">UI Develeoper</p>
+                    <p className="text-gray-500">Indonesia</p>
                   </div>
                 </div>
               </CarouselItem>
@@ -80,17 +76,14 @@ export default function Reviews() {
                       src={reviewProfilethree}
                     />
                     <p className="leading-relaxed">
-                      Edison bulb retro cloud bread echo park, helvetica
-                      stumptown taiyaki taxidermy 90&rsquo;s cronut +1 kinfolk.
-                      Single-origin coffee ennui shaman taiyaki vape DIY tote
-                      bag drinking vinegar cronut adaptogen squid fanny pack
-                      vaporware.
+                      So easy to deal with. Everything was organised and the
+                      itinerary sent which was easy to understand & navigate.
                     </p>
                     <span className="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4" />
                     <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm dark:text-white">
-                      ALPER KAMU
+                      Scott Frewer
                     </h2>
-                    <p className="text-gray-500">UI Develeoper</p>
+                    <p className="text-gray-500">Thailand</p>
                   </div>
                 </div>
               </CarouselItem>

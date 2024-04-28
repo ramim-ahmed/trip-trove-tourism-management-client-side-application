@@ -85,7 +85,7 @@ export default function AddTouristSpot() {
       <Helmet>
         <title>Add Tourist Spot</title>
       </Helmet>
-      <div className="max-w-6xl mx-auto bg-[#f1f0f042] border-baseColor border border-opacity-15 my-20 lg:p-10 px-3 py-8 ">
+      <div className="max-w-6xl mx-auto bg-[#f1f0f042]  dark:bg-dark-color border-baseColor border border-opacity-15 my-20 lg:p-10 px-3 py-8 ">
         <h1 className="text-center text-xl font-semibold">
           Create New Tourist Spot
         </h1>
@@ -101,7 +101,7 @@ export default function AddTouristSpot() {
                 type="text"
                 id="name"
                 name="name"
-                className="w-full bg-white rounded border border-gray-300 focus:border-baseColor focus:ring-2 focus:ring-baseColor text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full bg-white dark:bg-dark-color rounded border border-gray-300 focus:border-baseColor focus:ring-2 focus:ring-baseColor text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               />
               {errors.name && (
                 <span className="text-red-500">This field is required</span>
@@ -134,7 +134,7 @@ export default function AddTouristSpot() {
                 type="text"
                 id="location"
                 name="location"
-                className="w-full bg-white rounded border border-gray-300 focus:border-baseColor focus:ring-2 focus:ring-baseColor text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full bg-white rounded border border-gray-300 focus:border-baseColor focus:ring-2 focus:ring-baseColor text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out dark:bg-dark-color"
               />
               {errors.location && (
                 <span className="text-red-500">This field is required</span>
@@ -153,7 +153,7 @@ export default function AddTouristSpot() {
                 type="number"
                 id="average_cost"
                 name="average_cost"
-                className="w-full bg-white rounded border border-gray-300 focus:border-baseColor focus:ring-2 focus:ring-baseColor text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full bg-white rounded border border-gray-300 focus:border-baseColor focus:ring-2 focus:ring-baseColor text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out dark:bg-dark-color"
               />
               {errors.average_cost && (
                 <span className="text-red-500">This field is required</span>
@@ -189,7 +189,7 @@ export default function AddTouristSpot() {
                 type="text"
                 id="travel_time"
                 name="travel_time"
-                className="w-full bg-white rounded border border-gray-300 focus:border-baseColor focus:ring-2 focus:ring-baseColor text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full bg-white rounded border border-gray-300 focus:border-baseColor focus:ring-2 focus:ring-baseColor text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out dark:bg-dark-color"
               />
               {errors.travel_time && (
                 <span className="text-red-500">This field is required</span>
@@ -208,7 +208,7 @@ export default function AddTouristSpot() {
                 type="text"
                 id="total_visitor_per_year"
                 name="total_visitor_per_year"
-                className="w-full bg-white rounded border border-gray-300 focus:border-baseColor focus:ring-2 focus:ring-baseColor text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full bg-white rounded border border-gray-300 focus:border-baseColor focus:ring-2 focus:ring-baseColor text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out dark:bg-dark-color"
               />
               {errors.total_visitor_per_year && (
                 <span className="text-red-500">This field is required</span>
@@ -227,7 +227,7 @@ export default function AddTouristSpot() {
                 type="url"
                 id="photo"
                 name="photo"
-                className="w-full bg-white rounded border border-gray-300 focus:border-baseColor focus:ring-2 focus:ring-baseColor text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                className="w-full bg-white rounded border border-gray-300 focus:border-baseColor focus:ring-2 focus:ring-baseColor text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out dark:bg-dark-color"
               />
               {errors.photo && (
                 <span className="text-red-500">This field is required</span>
@@ -246,7 +246,7 @@ export default function AddTouristSpot() {
                 type="text"
                 id="description"
                 name="description"
-                className="w-full bg-white rounded border border-gray-300 focus:border-baseColor focus:ring-2 focus:ring-baseColor h-20 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                className="w-full bg-white rounded border border-gray-300 focus:border-baseColor focus:ring-2 focus:ring-baseColor h-20 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out dark:bg-dark-color"
               />
               {errors.description && (
                 <span className="text-red-500">This field is required</span>
