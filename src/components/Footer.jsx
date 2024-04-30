@@ -9,9 +9,8 @@ export default function Footer() {
           <div className="lg:w-2/5 md:w-1/2 w-full">
             <h1 className="font-bold text-xl">Trip Trove</h1>
             <p className="mt-2 pr-10">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi
-              culpa soluta consequuntur eos atque iusto quis earum cumque
-              explicabo mollitia!
+              Trip Trove is a tourism management system (TMS) is a focus tourism
+              service providers run and operate their enterprises.
             </p>
             <div className="mt-5 flex justify-center md:justify-start">
               <div>
