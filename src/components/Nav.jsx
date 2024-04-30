@@ -13,6 +13,7 @@ import ThemeMode from "./ThemeMode";
 
 export default function Nav() {
   const { authUser, logout } = useAuth();
+  console.log(authUser);
   const handleLogoutUser = () => {
     logout();
   };

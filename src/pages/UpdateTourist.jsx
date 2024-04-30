@@ -104,7 +104,7 @@ export default function UpdateTourist() {
             <p className="font-medium">GO BACK</p>
           </div>
         </div>
-        <div className="max-w-6xl mt-5 mx-auto bg-[#f1f0f042] border-baseColor border border-opacity-15 lg:p-10 py-10 px-3">
+        <div className="max-w-6xl mt-5 mx-auto bg-[#f1f0f042] dark:bg-dark-color border-baseColor border border-opacity-15 lg:p-10 py-10 px-3">
           <div>
             <h1 className="text-center text-xl font-semibold">
               Update Tourist Spot
@@ -129,7 +129,7 @@ export default function UpdateTourist() {
                   type="text"
                   id="name"
                   name="name"
-                  className="w-full bg-white rounded border border-gray-300 focus:border-baseColor focus:ring-2 focus:ring-baseColor text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  className="w-full bg-white rounded border border-gray-300 focus:border-baseColor focus:ring-2 focus:ring-baseColor text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out dark:bg-dark-color dark:text-gray-200"
                 />
               </div>
               <div className=" mb-4 lg:col-span-6 col-span-12">
@@ -160,7 +160,7 @@ export default function UpdateTourist() {
                   type="text"
                   id="location"
                   name="location"
-                  className="w-full bg-white rounded border border-gray-300 focus:border-baseColor focus:ring-2 focus:ring-baseColor text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  className="w-full bg-white rounded border border-gray-300 focus:border-baseColor focus:ring-2 focus:ring-baseColor text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out dark:bg-dark-color dark:text-gray-200"
                 />
               </div>
               <div className=" mb-4 lg:col-span-6 col-span-12">
@@ -177,7 +177,7 @@ export default function UpdateTourist() {
                   type="number"
                   id="average_cost"
                   name="average_cost"
-                  className="w-full bg-white rounded border border-gray-300 focus:border-baseColor focus:ring-2 focus:ring-baseColor text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  className="w-full bg-white rounded border border-gray-300 focus:border-baseColor focus:ring-2 focus:ring-baseColor text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out dark:bg-dark-color dark:text-gray-200"
                 />
               </div>
               <div className=" mb-4 lg:col-span-6 col-span-12">
@@ -214,7 +214,7 @@ export default function UpdateTourist() {
                   type="text"
                   id="travel_time"
                   name="travel_time"
-                  className="w-full bg-white rounded border border-gray-300 focus:border-baseColor focus:ring-2 focus:ring-baseColor text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  className="w-full bg-white rounded border border-gray-300 focus:border-baseColor focus:ring-2 focus:ring-baseColor text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out dark:bg-dark-color dark:text-gray-200"
                 />
               </div>
               <div className=" mb-4 lg:col-span-6 col-span-12">
@@ -231,7 +231,7 @@ export default function UpdateTourist() {
                   type="text"
                   id="total_visitor_per_year"
                   name="total_visitor_per_year"
-                  className="w-full bg-white rounded border border-gray-300 focus:border-baseColor focus:ring-2 focus:ring-baseColor text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  className="w-full bg-white rounded border border-gray-300 focus:border-baseColor focus:ring-2 focus:ring-baseColor text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out dark:bg-dark-color dark:text-gray-200"
                 />
               </div>
               <div className=" mb-4 lg:col-span-6 col-span-12">
@@ -248,7 +248,7 @@ export default function UpdateTourist() {
                   type="url"
                   id="photo"
                   name="photo"
-                  className="w-full bg-white rounded border border-gray-300 focus:border-baseColor focus:ring-2 focus:ring-baseColor text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  className="w-full bg-white rounded border border-gray-300 focus:border-baseColor focus:ring-2 focus:ring-baseColor text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out dark:bg-dark-color dark:text-gray-200"
                 />
               </div>
               <div className=" mb-4 col-span-12">
@@ -265,7 +265,7 @@ export default function UpdateTourist() {
                   type="text"
                   id="description"
                   name="description"
-                  className="w-full bg-white rounded border border-gray-300 focus:border-baseColor focus:ring-2 focus:ring-baseColor h-28 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                  className="w-full bg-white rounded border border-gray-300 focus:border-baseColor focus:ring-2 focus:ring-baseColor h-28 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out dark:bg-dark-color dark:text-gray-200"
                 />
               </div>
             </div>

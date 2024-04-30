@@ -18,14 +18,14 @@ export default function SocialAuth() {
     <div className="flex justify-center space-x-4">
       <button
         onClick={handleGoogleAuth}
-        className="border border-baseColor w-full text-primary font-medium py-1 px-4 rounded-3xl mt-2 flex justify-between items-center"
+        className="border border-baseColor w-full text-primary font-medium py-1 px-4 rounded-3xl mt-2 flex justify-between items-center dark:bg-dark-color"
       >
         <FcGoogle className="h-6 w-6" />
         <p>Google</p>
       </button>
       <button
         onClick={handleGithubAuth}
-        className="border border-baseColor w-full text-primary font-medium py-1 px-4 rounded-3xl mt-2 flex justify-between items-center"
+        className="border border-baseColor w-full text-primary font-medium py-1 px-4 rounded-3xl mt-2 flex justify-between items-center dark:bg-dark-color"
       >
         <FaGithub className="h-6 w-6" />
         <p>Github</p>
