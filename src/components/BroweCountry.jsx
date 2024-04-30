@@ -9,7 +9,7 @@ export default function BroweCountry() {
     queryFn: async () => await axios.get("/countries"),
   });
   return (
-    <div className="max-w-6xl mx-auto pb-20 px-3">
+    <div className="max-w-6xl mx-auto pb-20 px-3 pt-10">
       <div>
         <h1 className="text-2xl text-center font-bold">
           Browse Tourists Spot By Country

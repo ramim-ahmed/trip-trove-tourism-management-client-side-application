@@ -6,6 +6,8 @@ import slideOne from "../assets/slideOne.jpg";
 import slideTwo from "../assets/slideTwo.jpg";
 import slideThree from "../assets/slideThree.jpg";
 import { Button } from "./ui/button";
+import { Typewriter } from "react-simple-typewriter";
+
 export default function Banner() {
   return (
     <>
@@ -27,7 +29,15 @@ export default function Banner() {
               <div className="space-y-4">
                 <h1 className="text-2xl text-white">Discover The</h1>
                 <h1 className="text-6xl font-bold text-white">
-                  Adventure Best Tourism Spot In World
+                  <Typewriter
+                    words={["Adventure Best Tourism Spot In World"]}
+                    loop={5}
+                    cursor
+                    cursorStyle="_"
+                    typeSpeed={70}
+                    deleteSpeed={50}
+                    delaySpeed={1000}
+                  />
                 </h1>
                 <p className="text-xl text-white">
                   Your best Adventure Deals with <strong>Trip Trove</strong>
@@ -48,7 +58,15 @@ export default function Banner() {
               <div className="space-y-4">
                 <h1 className="text-2xl text-white">Let&rsquo;s The</h1>
                 <h1 className="text-6xl font-bold text-white">
-                  Your Journery Begins Start Now.
+                  <Typewriter
+                    words={["Your Journery Begins Start Now."]}
+                    loop={5}
+                    cursor
+                    cursorStyle="_"
+                    typeSpeed={70}
+                    deleteSpeed={50}
+                    delaySpeed={1000}
+                  />
                 </h1>
                 <p className="text-xl text-white">
                   We are committed place most expensible tour guide from{" "}
@@ -70,7 +88,15 @@ export default function Banner() {
               <div className="space-y-4">
                 <h1 className="text-2xl text-white">Discover The</h1>
                 <h1 className="text-6xl font-bold text-white">
-                  Ultimate Tourism Planner
+                  <Typewriter
+                    words={["Ultimate Tourism Planner"]}
+                    loop={5}
+                    cursor
+                    cursorStyle="_"
+                    typeSpeed={70}
+                    deleteSpeed={50}
+                    delaySpeed={1000}
+                  />
                 </h1>
                 <p className="text-xl text-white">
                   Your best Adventure Deals with <strong>Trip Trove</strong>

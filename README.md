@@ -1,8 +1,12 @@
-# Trip Trove Tourism Management Application
+# Trip Trove Tourism Management : Full Stack Application
 
-Live site:
+Live site: client-side
 
 - [Trip-Trove](https://trip-trove-tourism-client-side.vercel.app/)
+
+github_repo: server-side
+
+- [Trip-Trove](https://github.com/programming-hero-web-course-4/b9a10-server-side-ramim-ahmed)
 
 Features ✨:
 
@@ -31,8 +35,9 @@ Tech Uses 🔥:
 - [Swiper](https://swiperjs.com/) :that allows help pre build slider use to application.
 - [React-Hook-Form](https://react-hook-form.com/): that allows to form handling with validation
 - [Swiper](https://swiperjs.com/) :that allows help pre build slider use to application.
-- [React-Hook-Form](https://react-hook-form.com/): that allows to form handling with validation
 
 Challenges Requirements npm I Use ✨:
 
-- [React-Awesome-Reveal](https://www.npmjs.com/package/react-awesome-reveal): React Awesome Reveal is a library for React apps written in TypeScript that adds reveal animations
+- [React-Awesome-Reveal](https://www.npmjs.com/package/react-awesome-reveal): That allows to easy to use simple animation library
+
+- [React-Simple-Typewriter](https://www.npmjs.com/package/react-simple-typewriter):Adding a nice typewriter effect to your project.
